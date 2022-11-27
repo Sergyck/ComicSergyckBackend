@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const routes = require('./src/routes/routes');
+const routes = require('./src/routes');
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 // Routes
-app.use('/', routes());
+app.use('/api', routes);
 
 //Static files
 app.use(express.static(__dirname + '/public'));

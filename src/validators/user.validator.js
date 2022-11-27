@@ -1,7 +1,7 @@
 const { check } = require('express-validator');
 const { validateResult } = require('../helpers/validateHelper');
 
-const validateCreate = [
+const validateCreateUser = [
     check('document', 'Debe ingresar el documento').exists().notEmpty(),
     check('document', 'Solo se aceptan valores numericos para el documento').isNumeric(),
     check('name', 'Debe ingresar el nombre del usuario').exists().notEmpty(),
@@ -19,4 +19,4 @@ const validateCreate = [
     }
 ];
 // TODO: document, name, lastname, email, phone, username, password
-module.exports = { validateCreate };
+module.exports = { validateCreateUser };
